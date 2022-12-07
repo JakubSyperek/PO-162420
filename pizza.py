@@ -17,9 +17,7 @@ class Pizza:
         else:
             return math.pi * pow((diameter / 2), 2)
 
-
-    price = 0.05 * area + __toppings*2
-
+    # price = 0.05 * area
 
     @property
     def diameter(self) -> float:

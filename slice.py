@@ -5,7 +5,7 @@ class Slice(Pizza):
     __how_many_slices: int
 
     def __init__(self, diameter: float = 0, toppings: dict[str, int] = None, how_many_slices: int = 0) -> None:
-        super().__init__(toppings, diameter)
+        super().__init__(diameter, toppings)
         self.__how_many_slices = how_many_slices
 
     @property
@@ -23,19 +23,18 @@ class Slice(Pizza):
     def how_many_slices(self) -> int:
         return self.__how_many_slices
 
-    def part_price(self, ordered_slices, __how_many_slices, price) -> int:
-        __ordered_slices = __price*(__/__how_many_slices
-
+    def part_price(self, ordered_slices, how_many_slices, price) -> int:
+        return price * (ordered_slices / how_many_slices)
 
     def __str__(self) -> str:
         if self.__toppings == 0:
             return f"srednica: {self.__diameter} \n" \
                    f"cena: {self.__price} \n" \
                    f"kawalki: {self.__how_many_slices} \n" \
-                   f"cena za kawalek: {self.__price/self.__how_many_slices}"
+                   f"cena za kawalek: {self.__price / self.__how_many_slices}"
         else:
             return f"srednica: {self.__diameter} \n" \
                    f"dodatki: {self.__toppings} \n" \
                    f"cena: {self.__price} \n" \
                    f"kawalki: {self.__how_many_slices} \n" \
-                   f"cena za kawalek: {self.__price/self.__how_many_slices}"
+                   f"cena za kawalek: {self.__price / self.__how_many_slices}"
