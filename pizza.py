@@ -12,10 +12,14 @@ class Pizza:
 
     @staticmethod
     def area(diameter) -> float:
-        if diameter > 20:
+        if diameter < 20:
             print("Bledna srednica")
         else:
             return math.pi * pow((diameter / 2), 2)
+
+
+    price = 0.05 * area + __toppings*2
+
 
     @property
     def diameter(self) -> float:
